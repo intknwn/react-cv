@@ -1,0 +1,331 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Проект «Шесть городов»",
+      "description": "«Шесть городов» — сервис для путешественников по мотивам одной всемирно известной онлайн-площадки для размещения и поиска жилья по всему миру.",
+      "features": [
+        "Одностраничное приложение (SPA) на React, Redux, React Router, TypeScript",
+        "Снепшот и юнит-тесты на Jest, Enzyme",
+        "Авторизация пользователей",
+        "Получение и обновление данных об объектах недвижимости с помощью REST API",
+        "Сортировка",
+        "Добавление в избранное",
+        "Интерактивная карта",
+        "Возможность добавлять комментарии к объектам недвижимости"
+      ],
+      "images": [
+        {
+          "img": {
+            "src": "img/six-cities-01@1x.png",
+            "srcset": "img/six-cities-01@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/six-cities-01@1x.webp 1x, img/six-cities-01@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Шесть городов»"
+        },
+        {
+          "img": {
+            "src": "img/six-cities-02@1x.png",
+            "srcset": "img/six-cities-02@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/six-cities-02@1x.webp 1x, img/six-cities-02@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Шесть городов»"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Проект «Что посмотреть»",
+      "description": "«Что посмотреть» — приложение онлайн кинотеатра со стандартным функционалом стриминговых платформ.",
+      "features": [
+        "Одностраничное приложение (SPA) на React, Redux, React Router",
+        "Снепшот и юнит-тесты на Jest, Enzyme",
+        "Авторизация пользователей",
+        "Загрузка данных о фильмах с сервера",
+        "Сортировка фильмов по жанрам",
+        "Добавление фильмов в список к просмотру",
+        "Возможность просмотра фильмов онлайн",
+        "Добавление обзоров к фильмам"
+      ],
+      "images": [
+        {
+          "img": {
+            "src": "img/what-to-watch-01@1x.png",
+            "srcset": "img/what-to-watch-01@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/what-to-watch-01@1x.webp 1x, img/what-to-watch-01@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Что посмотреть»"
+        },
+        {
+          "img": {
+            "src": "img/what-to-watch-02@1x.png",
+            "srcset": "img/what-to-watch-02@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/what-to-watch-02@1x.webp 1x, img/what-to-watch-02@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Что посмотреть»"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Проект «Большое путешествие»",
+      "description": "Сервис «Большое путешествие» помогает детально спланировать маршрут поездки, рассчитать стоимость путешествия и получить информацию о достопримечательностях.",
+      "features": [
+        "Одностраничное приложение (SPA) на Vanilla JS, Webpack",
+        "Архитектура приложения на основе MVC и паттерна Observer",
+        "Получение и обновление данных о путешствии с помощью REST API",
+        "Построение диаграмм с помощью Chart.js",
+        "Сортировка",
+        "Добавление в избранное"
+      ],
+      "images": [
+        {
+          "img": {
+            "src": "img/bigtrip-01@1x.png",
+            "srcset": "img/bigtrip-01@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/bigtrip-01@1x.webp 1x, img/bigtrip-01@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Большое путешествие»"
+        },
+        {
+          "img": {
+            "src": "img/bigtrip-02@1x.png",
+            "srcset": "img/bigtrip-02@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/bigtrip-02@1x.webp 1x, img/bigtrip-02@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Большое путешествие»"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Проект «Израиль»",
+      "description": "Посадочная страница студентческой программы «Маса» — совместного проекта правительства Израиля и Еврейского агентства Сохнут.",
+      "features": [
+        "HTML, CSS, JavaScript, Gulp, Webpack",
+        "Сложная адаптивная сетка",
+        "Слайдеры",
+        "Модальные окна",
+        "Валидация форм",
+        "Поддержка IE11"
+      ],
+      "images": [
+        {
+          "img": {
+            "src": "img/israel-01@1x.png",
+            "srcset": "img/israel-01@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/israel-01@1x.webp 1x, img/israel-01@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Израиль»"
+        },
+        {
+          "img": {
+            "src": "img/israel-02@1x.png",
+            "srcset": "img/israel-02@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/israel-02@1x.webp 1x, img/israel-02@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Израиль»"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Проект «Велосипеды»",
+      "description": "Посадочная страница интернет-магазина велосипедов.",
+      "features": [
+        "HTML, CSS, JavaScript, Gulp",
+        "Адаптивная сетка на Flexbox: десктопная и мобильные версии",
+        "Валидация форм",
+        "Адаптивная и ретиновая графика"
+      ],
+      "images": [
+        {
+          "img": {
+            "src": "img/bikes-01@1x.png",
+            "srcset": "img/bikes-01@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/bikes-01@1x.webp 1x, img/bikes-01@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Велосипеды»"
+        },
+        {
+          "img": {
+            "src": "img/bikes-02@1x.png",
+            "srcset": "img/bikes-02@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/bikes-02@1x.webp 1x, img/bikes-02@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Велосипеды»"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Проект «Кекстаграм»",
+      "description": "Кекстаграм — сервис просмотра изображений. Пользователям предоставлена возможность загружать свои фотографии или просматривать фотографии, загруженные ранее другими пользователями.",
+      "features": [
+        "HTML, CSS, JavaScript, IIFE-модули",
+        "Загрузка фотографий и наложение эффектов",
+        "Получение фотографий пользователей с помощью REST API",
+        "Добавление комментариев",
+        "Валидация форм"
+      ],
+      "images": [
+        {
+          "img": {
+            "src": "img/kekstagram-01@1x.png",
+            "srcset": "img/kekstagram-01@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/kekstagram-01@1x.webp 1x, img/kekstagram-01@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Кекстаграм»"
+        },
+        {
+          "img": {
+            "src": "img/kekstagram-02@1x.png",
+            "srcset": "img/kekstagram-02@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/kekstagram-02@1x.webp 1x, img/kekstagram-02@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Кекстаграм»"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Проект «Мишка»",
+      "description": "Интернет-магазин милых вещиц для дома ручной работы.",
+      "features": [
+        "HTML, CSS, Gulp",
+        "Сложная адаптивная сетка: десктопная и мобильные версии",
+        "Множество декоративных элементов",
+        "Кастомные поля ввода",
+        "Адаптивная и ретиновая графика",
+        "Поддержка IE11"
+      ],
+      "images": [
+        {
+          "img": {
+            "src": "img/mishka-01@1x.png",
+            "srcset": "img/mishka-01@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/mishka-01@1x.webp 1x, img/mishka-01@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Мишка»"
+        },
+        {
+          "img": {
+            "src": "img/mishka-02@1x.png",
+            "srcset": "img/mishka-02@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/mishka-02@1x.webp 1x, img/mishka-02@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Мишка»"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Проект «Техномарт»",
+      "description": "Интернет-магазин строительных материалов и инструментов для дома.",
+      "features": [
+        "HTML, CSS",
+        "Проект начального уровная с фиксированной сеткой на Flexbox",
+        "Кастомные поля ввода",
+        "Поддержка IE11"
+      ],
+      "images": [
+        {
+          "img": {
+            "src": "img/technomart-01@1x.png",
+            "srcset": "img/technomart-01@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/technomart-01@1x.webp 1x, img/technomart-01@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Техномарт»"
+        },
+        {
+          "img": {
+            "src": "img/technomart-02@1x.png",
+            "srcset": "img/technomart-02@2x.png 2x"
+          },
+          "source": [
+            {
+              "type": "image/webp",
+              "srcset": "img/technomart-02@1x.webp 1x, img/technomart-02@2x.webp 2x"
+            }
+          ],
+          "alt": "Проект «Техномарт»"
+        }
+      ]
+    }
+  ]
+}
