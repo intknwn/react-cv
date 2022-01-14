@@ -1,6 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import App from "./components/app/app.jsx";
+
+import createServer from "./server";
+
+createServer();
+
 const root = document.getElementById(`root`);
 
-ReactDOM.render(<div>It worked</div>, root);
+ReactDOM.render(<App />, root);
