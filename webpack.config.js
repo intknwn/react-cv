@@ -12,6 +12,7 @@ module.exports = {
     port: 1337,
     historyApiFallback: true,
   },
+  devtool: `source-map`,
   module: {
     rules: [
       {
@@ -29,8 +30,14 @@ module.exports = {
                     targets: "defaults",
                   },
                 ],
-                "@babel/preset-react",
+                [
+                  "@babel/preset-react",
+                  {
+                    runtime: "automatic",
+                  },
+                ],
               ],
+              plugins: ["@babel/plugin-transform-runtime"],
             },
           },
         ],
