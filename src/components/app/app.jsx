@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Container } from "../../styles/components";
 
 const App = () => {
   const [projects, setProjects] = useState([]);
@@ -15,7 +16,7 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <Container>
       {
         projects.map((project) => {
           return (
@@ -31,7 +32,7 @@ const App = () => {
           );
         })
       }
-    </>
+    </Container>
   );
 };
 
