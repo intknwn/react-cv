@@ -1,9 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 import { defaultTheme } from "./theme";
+import { fonts } from "../fonts/fonts";
 
 export default createGlobalStyle`
   ${normalize}
+  ${fonts}
 
   html {
     box-sizing: border-box;
