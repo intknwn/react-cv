@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
-import {H2} from "../../styles/components";
+import React, { useState, useEffect } from "react";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import TypeFilters from "../type-filters/type-filters.jsx";
+import {H2} from "../../styles/components";
 import {FilterType} from "../../const";
+import styled from "styled-components";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -45,11 +47,16 @@ const Projects = () => {
         activeFilter={typeFilter}
         onFilterChange={setTypeFilter}
       />
+      <TransitionGroup component="ul">
       {
         getProjectsByCond()
-          .map((project) => {
-            return (
-              <div key={project.id}>
+          .map((project) => 
+            <CSSTransition
+              key={project.id}
+              timeout={500}
+              classNames="item"
+            >
+              <ListItem>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <ul>
@@ -57,12 +64,35 @@ const Projects = () => {
                     project.features.map((feature, index) => <li key={index}>{feature}</li>)
                   }
                 </ul>
-              </div>
-            );
-          })
+              </ListItem>
+            </CSSTransition>
+          )
       }
+      </TransitionGroup>
     </section>
   );
 };
+
+const ListItem = styled.li`
+  list-style: none;
+
+  &.item-enter {
+  opacity: 0;
+  transform: scale(0.9);
+  }
+  &.item-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 500ms ease-in;
+  }
+  &.item-exit {
+    opacity: 1;
+  }
+  &.item-exit-active {
+    opacity: 0;
+    transition: all 500ms ease-in;
+    transform: scale(0.9);
+  }
+`
 
 export default Projects;
