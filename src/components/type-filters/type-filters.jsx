@@ -5,13 +5,13 @@ const TypeFilters = ({activeFilter, onFilterChange}) => {
     <>
       <p>Тип:</p>
       {
-        Object.values(FilterType).map(({type, text}) => {
+        Object.values(FilterType).map(({type, caption}) => {
           const filterType = type.toLowerCase();
-          const filterName = text.toUpperCase();
+          const filterName = caption.toUpperCase();
 
           return (
             <div key={filterType}>
-              <input type="radio" name="type" id={filterType} value={filterType} onChange={() => onFilterChange(filterType)} checked={activeFilter === filterType} />
+              <input class="visually-hidden" type="radio" name="type" id={filterType} value={filterType} onChange={() => onFilterChange(filterType)} checked={activeFilter === filterType} />
               <label htmlFor={filterType}>{filterName}</label>
             </div>
           );

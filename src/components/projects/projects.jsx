@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import TypeFilters from "../type-filters/type-filters.jsx";
+import TechFilters from "../tech-filters/tech-filter.jsx";
 import {H2} from "../../styles/components";
-import {FilterType} from "../../const";
+import {FilterType, FilterTech} from "../../const";
 import styled from "styled-components";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [typeFilter, setTypeFilter] = useState(FilterType.ALL.type);
+  const [techFilters, setTechFilters] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
 
   async function getProjects() {
@@ -18,17 +20,20 @@ const Projects = () => {
   }
 
   const filterProjects = () => {
-    if (typeFilter === FilterType.ALL.type) {
-      return;
-    }
+    const isAll = typeFilter === FilterType.ALL.type;
+    
+    const filtered = projects.filter(({type, tags}) => {
+      const isSameType = type === typeFilter;
+      const isSameTech = techFilters.map(({tech}) => tags.includes(tech)).every(Boolean);
+      
+      return (isAll || isSameType) && isSameTech;
+    });
 
-    const filteredProjects = projects.filter((project) => project.type === typeFilter);
-
-    setFilteredProjects(filteredProjects);
+    setFilteredProjects(filtered);
   };
 
   const getProjectsByCond = () => {
-    return typeFilter === FilterType.ALL.type ? projects : filteredProjects;
+    return (typeFilter === FilterType.ALL.type) && (techFilters.length === Object.keys(FilterTech).length) ? projects : filteredProjects;
   };
 
 
@@ -38,7 +43,7 @@ const Projects = () => {
 
   useEffect(() => {
     filterProjects();
-  }, [typeFilter]);
+  }, [projects, typeFilter, techFilters]);
 
   return (
     <section>
@@ -47,9 +52,13 @@ const Projects = () => {
         activeFilter={typeFilter}
         onFilterChange={setTypeFilter}
       />
+      <TechFilters 
+        checkedFilters={techFilters}
+        onFilterChange={setTechFilters}
+      />
       <TransitionGroup component="ul">
       {
-        getProjectsByCond()
+        filteredProjects
           .map((project) => 
             <CSSTransition
               key={project.id}
@@ -62,6 +71,11 @@ const Projects = () => {
                 <ul>
                   {
                     project.features.map((feature, index) => <li key={index}>{feature}</li>)
+                  }
+                </ul>
+                <ul>
+                  {
+                    project.tags.map((tag, index) => <li key={index}>{`#` + tag}</li>)
                   }
                 </ul>
               </ListItem>

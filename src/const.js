@@ -1,14 +1,29 @@
 export const FilterType = {
   ALL: {
     type: `all`,
-    text: `все`,
+    caption: `все`,
   },
   COMMERCIAL: {
     type: `commercial`,
-    text: `коммерческий`,
+    caption: `коммерческий`,
   },
   PRACTICE: {
     type: `practice`,
-    text: `учебный`,
+    caption: `учебный`,
+  },
+};
+
+export const FilterTech = {
+  HTML: {
+    tech: `html`,
+    caption: `верстка`,
+  },
+  JS: {
+    tech: `js`,
+    caption: `js`,
+  },
+  REACT: {
+    tech: `react`,
+    caption: `react`,
   },
 };
