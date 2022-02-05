@@ -39,12 +39,17 @@ module.exports = {
                 ],
               ],
               plugins: [
+                "macros",
                 "@babel/plugin-transform-runtime",
                 "babel-plugin-styled-components",
               ],
             },
           },
         ],
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
