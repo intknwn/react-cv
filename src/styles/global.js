@@ -24,8 +24,8 @@ export default createGlobalStyle`
     font-weight: normal;
     font-size: 18px;
     line-height: 1.5;
-    color: defaultTheme.color.font;
-    background-color: defaultTheme.color.bg;
+    color: ${defaultTheme.color.font};
+    background-color: ${defaultTheme.color.bg};
     overflow-x: hidden;
 
     @media ${defaultTheme.media.mobile} {
@@ -64,7 +64,7 @@ export default createGlobalStyle`
   }
 
   h1 {
-    color: defaultTheme.color.titlePrimary;
+    color: ${defaultTheme.color.titlePrimary};
   }
 
   h2 {
@@ -74,7 +74,7 @@ export default createGlobalStyle`
     font-variant: small-caps;
     line-height: 1.5;
     letter-spacing: 1px;
-    color: defaultTheme.color.titleSecondary;
+    color: ${defaultTheme.color.titleSecondary};
 
     text-transform: uppercase;
 
@@ -84,11 +84,11 @@ export default createGlobalStyle`
   }
 
   .icon {
-    fill: defaultTheme.color.icon;
+    fill: ${defaultTheme.color.icon};
 
     &:hover,
     &:focus {
-      fill: defaultTheme.color.iconHover;
+      fill: ${defaultTheme.color.iconHover};
     }
   }
 `;
