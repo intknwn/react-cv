@@ -67,7 +67,7 @@ const Projects = () => {
         <TransitionGroup component={List}>
         {
           filteredProjects
-            .map(({id, type, title, description, tags, images}) => 
+            .map(({id, type, title, desc, tags, images}) => 
               <CSSTransition
                 key={id}
                 timeout={500}
@@ -99,7 +99,7 @@ const Projects = () => {
                     </ImageWrapper>
                     <DescriptionWrapper>
                       <ProjectTitle>{title}</ProjectTitle>
-                      <Description>{description}</Description>
+                      <Description>{desc}</Description>
                       <TagsList>
                         {
                           tags.map((tag, index) => <Tag key={index}>{tag}</Tag>)
