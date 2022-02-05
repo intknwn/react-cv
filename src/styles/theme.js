@@ -7,13 +7,4 @@ export const defaultTheme = {
     icon: `#647c72`,
     iconHover: `#333333`,
   },
-  media: {
-    tablet: `(max-width: 1105px)`,
-    mobile: `(max-width: 767px)`,
-  },
-  sizes: {
-    container: {
-      maxWidth: 1175,
-    },
-  },
 };
