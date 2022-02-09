@@ -3,6 +3,7 @@ import tw, { styled, css } from 'twin.macro';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import TypeFilters from "../type-filters/type-filters.jsx";
 import TechFilters from "../tech-filters/tech-filter.jsx";
+import ProjectCard from "../project-card/project-card.jsx";
 import { defaultTheme } from "../../styles/theme"
 import {H2} from "../../styles/components";
 import {FilterType, FilterTech, Labels} from "../../const";
@@ -39,7 +40,6 @@ const Projects = () => {
     return (typeFilter === FilterType.ALL.type) && (techFilters.length === Object.keys(FilterTech).length) ? projects : filteredProjects;
   };
 
-
   useEffect(() => {
     getProjects();
   }, []);
@@ -67,46 +67,22 @@ const Projects = () => {
         <TransitionGroup component={List}>
         {
           filteredProjects
-            .map(({id, type, title, desc, tags, images}) => 
+            .map((project) => 
               <CSSTransition
-                key={id}
+                key={project.id}
                 timeout={500}
                 classNames="item"
               >
                 <ListItem>
                   <Label
                     {...{
-                      isCommercial: type === FilterType.COMMERCIAL.type,
-                      isPractice: type === FilterType.PRACTICE.type,
+                      isCommercial: project.type === FilterType.COMMERCIAL.type,
+                      isPractice: project.type === FilterType.PRACTICE.type,
                     }}
                   >
-                    {Labels[type.toUpperCase()].caption}
+                    {Labels[project.type.toUpperCase()].caption}
                   </Label>
-                  <ProjectCard>
-                    <ImageWrapper>
-                      {
-                        images.map(({src, alt, srcset, sources}, index) => {
-                          return (
-                            <picture key={index}>
-                              {
-                                sources.map(({type, srcset}, index) => <source key={index} type={type} srcSet={srcset} />)
-                              }
-                              <Image src={src} srcSet={srcset} width="157" height="209" alt={alt} />
-                            </picture>
-                          );
-                        })
-                      }
-                    </ImageWrapper>
-                    <DescriptionWrapper>
-                      <ProjectTitle>{title}</ProjectTitle>
-                      <Description>{desc}</Description>
-                      <TagsList>
-                        {
-                          tags.map((tag, index) => <Tag key={index}>{tag}</Tag>)
-                        }
-                      </TagsList>
-                    </DescriptionWrapper>
-                  </ProjectCard>
+                  <ProjectCard project={project}/>
                 </ListItem>
               </CSSTransition>
             )
@@ -136,10 +112,7 @@ const List = styled.ul`
 `
 
 const ListItem = styled.li`
-  ${tw`col-span-3`}
-
-  position: relative;
-  list-style: none;
+  ${tw`col-span-3 relative list-none`}
 
   &.item-enter {
   opacity: 0;
@@ -160,32 +133,21 @@ const ListItem = styled.li`
   }
 `
 
-const ProjectCard = styled.a`
-  ${tw`flex flex-col h-96`}
-
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-
-  &:hover {
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
-  }
-`
-
 const Label = styled.div(({isPractice, isCommercial}) => [
-  tw`px-3 py-1 top-3 -right-2 text-sm font-bold`,
+  tw`
+    absolute
+    px-3
+    py-1
+    top-3 
+    -right-2 
+    text-sm
+    text-white
+    font-bold
+    z-10
+    rounded
+    shadow-xl
+  `,
   css`
-    position: absolute;
-    z-index: 1;
-
-
-    color: #fff;
-
-    border-radius: 5px;
-
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     text-shadow: 1px 1px 1px rgb(100, 124, 114);
   `,
   isPractice && css`
@@ -195,36 +157,5 @@ const Label = styled.div(({isPractice, isCommercial}) => [
     background: #63a63e;
   `
 ]);
-
-const ImageWrapper = styled.div`
-  ${tw`h-40 overflow-hidden relative`}
-`
-
-const Image = styled.img`
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: auto;
-`
-
-const DescriptionWrapper = styled.div`
-  ${tw`p-3 flex flex-col flex-grow`}
-`
-
-const Description = styled.p`
-  ${tw`text-base mb-8 max-h-28 overflow-hidden`}
-`
-
-const ProjectTitle = styled.h3`
-  ${tw`mb-2 text-base`}
-`
-
-const TagsList = styled.li`
-  ${tw`flex flex-wrap gap-1 mt-auto`}
-`
-
-const Tag = styled.li`
-  ${tw`py-1 px-2 font-bold text-xs bg-[#d5dbdf] rounded-lg`}
-`
 
 export default Projects;

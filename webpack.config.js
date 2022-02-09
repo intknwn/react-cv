@@ -39,6 +39,7 @@ module.exports = {
                 ],
               ],
               plugins: [
+                "babel-plugin-twin",
                 "macros",
                 "@babel/plugin-transform-runtime",
                 "babel-plugin-styled-components",

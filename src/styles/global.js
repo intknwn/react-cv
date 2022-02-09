@@ -27,10 +27,7 @@ export default createGlobalStyle`
     color: ${defaultTheme.color.font};
     background-color: ${defaultTheme.color.bg};
     overflow-x: hidden;
-
-    @media ${defaultTheme.media.mobile} {
-      font-size: 16px;
-    }
+    font-size: 16px;
   }
 
   .visually-hidden {
@@ -78,9 +75,7 @@ export default createGlobalStyle`
 
     text-transform: uppercase;
 
-    @media ${defaultTheme.media.mobile} {
-      margin-bottom: 40px;
-    }
+    margin-bottom: 40px;
   }
 
   .icon {

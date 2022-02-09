@@ -17,6 +17,8 @@
         "Интерактивная карта",
         "Возможность добавлять комментарии к объектам недвижимости"
       ],
+      "url": "cv/projects/six-cities/",
+      "repository": "https://github.com/intknwn/991089-six-cities-4",
       "images": [
         {
           "img": {
@@ -63,6 +65,8 @@
         "Возможность просмотра фильмов онлайн",
         "Добавление обзоров к фильмам"
       ],
+      "url": "cv/projects/what-to-watch/",
+      "repository": "https://github.com/intknwn/991089-what-to-watch-4",
       "images": [
         {
           "img": {
@@ -107,6 +111,8 @@
         "Сортировка",
         "Добавление в избранное"
       ],
+      "url": "cv/projects/bigtrip/",
+      "repository": "https://github.com/intknwn/991089-big-trip-11",
       "images": [
         {
           "img": {
@@ -151,6 +157,8 @@
         "Валидация форм",
         "Поддержка IE11"
       ],
+      "url": "cv/projects/israel/",
+      "repository": "https://github.com/intknwn/accelerator-israel",
       "images": [
         {
           "img": {
@@ -193,6 +201,8 @@
         "Валидация форм",
         "Адаптивная и ретиновая графика"
       ],
+      "url": "cv/projects/bikes/",
+      "repository": "https://github.com/intknwn/accelerator-bikes",
       "images": [
         {
           "img": {
@@ -236,6 +246,8 @@
         "Добавление комментариев",
         "Валидация форм"
       ],
+      "url": "cv/projects/kekstagram/",
+      "repository": "https://github.com/intknwn/991089-kekstagram-19",
       "images": [
         {
           "img": {
@@ -280,6 +292,8 @@
         "Адаптивная и ретиновая графика",
         "Поддержка IE11"
       ],
+      "url": "cv/projects/mishka/",
+      "repository": "https://github.com/intknwn/991089-mishka-18",
       "images": [
         {
           "img": {
@@ -322,6 +336,8 @@
         "Кастомные поля ввода",
         "Поддержка IE11"
       ],
+      "url": "cv/projects/technomart",
+      "repository": "https://github.com/intknwn/991089-technomart-26",
       "images": [
         {
           "img": {
