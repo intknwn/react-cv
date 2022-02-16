@@ -1,87 +1,92 @@
 import { Fragment } from "react";
-import tw, { styled } from 'twin.macro';
-import { Title } from "../../styles/components"
+import tw, { styled } from "twin.macro";
+import { Title } from "../../styles/components";
 import { defaultTheme } from "../../styles/theme";
-import {FilterType} from "../../const";
+import { FilterType } from "../../const";
 
-const TypeFilters = ({activeFilter, onFilterChange}) => {
+const TypeFilters = ({ activeFilter, onFilterChange }) => {
   return (
     <>
       <Title>Проекты</Title>
       <InputsWrapper>
-      {
-        Object.values(FilterType).map(({type, caption}) => {
+        {Object.values(FilterType).map(({ type, caption }) => {
           const filterType = type.toLowerCase();
 
           return (
             <Fragment key={filterType}>
-              <RadioInput className="visually-hidden" type="radio" name="type" id={filterType} value={filterType} onChange={() => onFilterChange(filterType)} checked={activeFilter === filterType} />
+              <RadioInput
+                className="visually-hidden"
+                type="radio"
+                name="type"
+                id={filterType}
+                value={filterType}
+                onChange={() => onFilterChange(filterType)}
+                checked={activeFilter === filterType}
+              />
               <Label htmlFor={filterType}>{caption}</Label>
             </Fragment>
           );
-        })
-      }
+        })}
       </InputsWrapper>
     </>
   );
 };
 
-const InputsWrapper = styled.div`
-  margin-bottom: 25px;
-`
+const InputsWrapper = tw.div`
+  mb-6
+`;
 
 const RadioInput = styled.input`
   & + label {
     &:after {
-      content: "";
-      position: absolute;
-      left: 4px;
-      top: 50%;
-
-      display: block;
-      width: 12px;
-      height: 12px;
-
-      background-color: ${defaultTheme.color.titleSecondary};
-      border-radius: 50%;
-
-      opacity: 0;
-      transform: translateY(-50%);
-
-      transition: opacity 300ms;
+      ${tw`
+        content-[""]
+        absolute
+        left-1
+        top-1/2
+        block
+        w-3
+        h-3
+        bg-black
+        rounded-full
+        opacity-0
+        -translate-y-1/2
+        transition
+        duration-300
+      `}
     }
   }
 
   &:checked + label {
     &:after {
-      opacity: 1;
+      ${tw`opacity-100`}
     }
   }
 `;
 
-const Label = styled.label`
-  position: relative;
-  display: block;
-  padding-left: 30px;
-  margin-bottom: 8px;
+const Label = tw.label`
+  relative
+  sm:block
+  inline-block
+  sm:pl-8
+  pl-7
+  mr-5
+  sm:mr-0
+  mb-2
 
-  font-size: 18px;
+  text-lg
+  sm:text-base
 
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-
-    display: block;
-    width: 20px;
-    height: 20px;
-
-    border: 2px solid ${defaultTheme.color.titleSecondary};
-    border-radius: 50%;
-
-    transform: translateY(-50%);
-  }
-`
+  before:absolute
+  before:left-0
+  before:top-1/2
+  before:block
+  before:w-5
+  before:h-5
+  before:border-2
+  before:border-black
+  before:rounded-full
+  before:-translate-y-1/2
+`;
 
 export default TypeFilters;

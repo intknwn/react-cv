@@ -1,36 +1,45 @@
-import tw, { styled } from 'twin.macro';
+import tw, { styled } from "twin.macro";
 import { Fragment } from "react";
-import { Title } from "../../styles/components"
+import { Title } from "../../styles/components";
 import { defaultTheme } from "../../styles/theme";
-import {FilterTech} from "../../const";
+import { FilterTech } from "../../const";
 
-const TechFilters = ({checkedFilters, onFilterChange}) => {
+const TechFilters = ({ checkedFilters, onFilterChange }) => {
   const changeHandler = (filter, isChecked) => {
     if (isChecked) {
-      onFilterChange(checkedFilters.filter((checkedFilter) => checkedFilter.tech !== filter.tech));
+      onFilterChange(
+        checkedFilters.filter(
+          (checkedFilter) => checkedFilter.tech !== filter.tech
+        )
+      );
 
       return;
     }
 
-    onFilterChange([...checkedFilters, filter]) 
+    onFilterChange([...checkedFilters, filter]);
   };
 
   return (
     <>
       <Title>Тип проекта</Title>
-      {
-        Object.values(FilterTech).map((filter) => {
-          const {tech, caption} = filter;
-          const isChecked = checkedFilters.some((filter) => filter.tech === tech);
+      {Object.values(FilterTech).map((filter) => {
+        const { tech, caption } = filter;
+        const isChecked = checkedFilters.some((filter) => filter.tech === tech);
 
-          return (
-            <Fragment key={tech}>
-              <CheckBoxInput className="visually-hidden" type="checkbox" name={tech} id={tech} onChange={() => changeHandler(filter, isChecked)} checked={isChecked}/>
-              <Label htmlFor={tech}>{caption}</Label>
-            </Fragment>
-          );
-        })
-      }
+        return (
+          <Fragment key={tech}>
+            <CheckBoxInput
+              className="visually-hidden"
+              type="checkbox"
+              name={tech}
+              id={tech}
+              onChange={() => changeHandler(filter, isChecked)}
+              checked={isChecked}
+            />
+            <Label htmlFor={tech}>{caption}</Label>
+          </Fragment>
+        );
+      })}
     </>
   );
 };
@@ -38,53 +47,54 @@ const TechFilters = ({checkedFilters, onFilterChange}) => {
 const CheckBoxInput = styled.input`
   & + label {
     &:after {
-      content: "";
-      position: absolute;
-      left: 4px;
-      top: 50%;
-
-      display: block;
-      width: 18px;
-      height: 12px;
-
-      border: 5px solid ${defaultTheme.color.titleSecondary};
-      border-top: none;
-      border-right: none;
-
-      opacity: 0;
-      transform: translateY(-80%) rotate(-45deg);
-
-      transition: opacity 300ms;
+      ${tw`
+        content-['']
+        absolute
+        left-1
+        top-1/2
+        
+        block
+        w-[20px]
+        h-[12px]
+        border-4
+        border-t-0
+        border-r-0
+        border-black
+        opacity-0
+        translate-y-[-80%]
+        -rotate-45
+        transition-opacity
+        duration-300
+      `}
     }
   }
 
   &:checked + label {
     &:after {
-      opacity: 1;
+      ${tw`opacity-100`}
     }
   }
-`
+`;
 
-const Label = styled.label`
-  position: relative;
-  display: block;
-  padding-left: 30px;
-  margin-bottom: 8px;
+const Label = tw.label`
+  relative
+  sm:block
+  inline-block
+  pl-7
 
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
+  mr-5
+  sm:mr-0
+  mb-2
 
-    display: block;
-    width: 20px;
-    height: 20px;
-
-    border: 2px solid ${defaultTheme.color.titleSecondary};
-
-    transform: translateY(-50%);
-  }
-`
+  before:absolute
+  before:left-0
+  before:top-1/2
+  before:block
+  before:w-5
+  before:h-5
+  before:border-2
+  before:border-black
+  before:-translate-y-1/2
+`;
 
 export default TechFilters;
