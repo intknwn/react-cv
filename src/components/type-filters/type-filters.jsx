@@ -33,7 +33,8 @@ const TypeFilters = ({ activeFilter, onFilterChange }) => {
 };
 
 const InputsWrapper = tw.div`
-  mb-6
+  md:mb-6
+  mb-1
 `;
 
 const RadioInput = styled.input`
@@ -66,13 +67,13 @@ const RadioInput = styled.input`
 
 const Label = tw.label`
   relative
-  sm:block
+  md:block
   inline-block
   sm:pl-8
   pl-7
   mr-5
-  sm:mr-0
-  mb-2
+  md:mr-0
+  mb-0
 
   text-lg
   sm:text-base

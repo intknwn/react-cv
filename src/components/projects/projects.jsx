@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import TypeFilters from "../type-filters/type-filters.jsx";
 import TechFilters from "../tech-filters/tech-filter.jsx";
 import ProjectCard from "../project-card/project-card.jsx";
+import Slider from "../slider/slider.jsx";
 import { defaultTheme } from "../../styles/theme";
 import { H2 } from "../../styles/components";
 import { FilterType, FilterTech, Labels } from "../../const";
@@ -13,6 +14,8 @@ const Projects = () => {
   const [typeFilter, setTypeFilter] = useState(FilterType.ALL.type);
   const [techFilters, setTechFilters] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
+  const [mediaQueryList] = useState(window.matchMedia("(max-width: 640px)"));
+  const [isMobile, setMobile] = useState(mediaQueryList.mathes);
 
   async function getProjects() {
     const res = await fetch("/api/projects");
@@ -51,6 +54,16 @@ const Projects = () => {
     filterProjects();
   }, [projects, typeFilter, techFilters]);
 
+  useEffect(() => {
+    const mediaChangeHandler = () => setMobile(mediaQueryList.matches);
+    mediaQueryList.addEventListener(`change`, mediaChangeHandler);
+
+    mediaChangeHandler();
+
+    return () =>
+      mediaQueryList.removeEventListener(`change`, mediaChangeHandler);
+  }, []);
+
   return (
     <section>
       <H2>Что делал</H2>
@@ -67,23 +80,31 @@ const Projects = () => {
             />
           </Filters>
         </FiltersWrapper>
-        <TransitionGroup component={List}>
-          {filteredProjects.map((project) => (
-            <CSSTransition key={project.id} timeout={500} classNames="item">
-              <ListItem>
-                <Label
-                  {...{
-                    isCommercial: project.type === FilterType.COMMERCIAL.type,
-                    isPractice: project.type === FilterType.PRACTICE.type,
-                  }}
-                >
-                  {Labels[project.type.toUpperCase()].caption}
-                </Label>
-                <ProjectCard project={project} />
-              </ListItem>
-            </CSSTransition>
-          ))}
-        </TransitionGroup>
+        {isMobile ? (
+          <Slider>
+            {filteredProjects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </Slider>
+        ) : (
+          <TransitionGroup component={List}>
+            {filteredProjects.map((project) => (
+              <CSSTransition key={project.id} timeout={500} classNames="item">
+                <ListItem>
+                  <Label
+                    {...{
+                      isCommercial: project.type === FilterType.COMMERCIAL.type,
+                      isPractice: project.type === FilterType.PRACTICE.type,
+                    }}
+                  >
+                    {Labels[project.type.toUpperCase()].caption}
+                  </Label>
+                  <ProjectCard project={project} />
+                </ListItem>
+              </CSSTransition>
+            ))}
+          </TransitionGroup>
+        )}
       </ProjectsWrapper>
     </section>
   );
@@ -100,7 +121,9 @@ const ProjectsWrapper = tw.div`
   grid
   grid-flow-col
   grid-cols-12
-  gap-7
+  md:gap-7
+  gap-0
+  gap-y-7
   grid-rows-[auto auto]
   md:grid-rows-none
 `;
@@ -125,7 +148,8 @@ const ListItem = styled.li`
   ${tw`
     xl:col-span-3
     lg:col-span-4
-    col-span-6
+    md:col-span-6
+    col-span-4
     relative
     list-none
   `}

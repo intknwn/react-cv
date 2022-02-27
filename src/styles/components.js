@@ -4,7 +4,8 @@ import { defaultTheme } from "./theme";
 export const Container = tw.div`
   container
   mx-auto
-  px-10
+  sm:px-10
+  px-4
 `;
 
 export const H2 = styled.h2`
@@ -17,9 +18,10 @@ export const H2 = styled.h2`
   text-transform: uppercase;
 `;
 
-export const Title = styled.p`
-  margin-bottom: 10px;
-  font-weight: 700;
-  font-size: 20px;
-  color: ${defaultTheme.color.titleSecondary};
+export const Title = tw.p`
+  md:mb-3
+  mb-1
+  font-bold
+  text-lg
+  text-[#647c72]
 `;

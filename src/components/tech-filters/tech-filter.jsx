@@ -21,7 +21,7 @@ const TechFilters = ({ checkedFilters, onFilterChange }) => {
 
   return (
     <>
-      <Title>Тип проекта</Title>
+      <Title>Делал на проекте</Title>
       {Object.values(FilterTech).map((filter) => {
         const { tech, caption } = filter;
         const isChecked = checkedFilters.some((filter) => filter.tech === tech);
@@ -78,12 +78,12 @@ const CheckBoxInput = styled.input`
 
 const Label = tw.label`
   relative
-  sm:block
+  md:block
   inline-block
   pl-7
 
   mr-5
-  sm:mr-0
+  md:mr-0
   mb-2
 
   before:absolute
