@@ -367,5 +367,59 @@
         }
       ]
     }
+  ],
+  "skills": [
+    {
+      "name": "HTML",
+      "logoUrl": "img/logo-html.svg"
+    },
+    {
+      "name": "CSS",
+      "logoUrl": "img/logo-css.svg"
+    },
+    {
+      "name": "JavaScript",
+      "logoUrl": "img/logo-js.svg"
+    },
+    {
+      "name": "Sass",
+      "logoUrl": "img/logo-sass.svg"
+    },
+    {
+      "name": "Gulp",
+      "logoUrl": "img/logo-gulp.svg"
+    },
+    {
+      "name": "Webpack",
+      "logoUrl": "img/logo-webpack.svg"
+    },
+    {
+      "name": "React",
+      "logoUrl": "img/logo-react.svg"
+    },
+    {
+      "name": "Redux",
+      "logoUrl": "img/logo-redux.svg"
+    },
+    {
+      "name": "Figma",
+      "logoUrl": "img/logo-figma.svg"
+    },
+    {
+      "name": "Node.js",
+      "logoUrl": "img/logo-nodejs.svg"
+    },
+    {
+      "name": "Bootstrap",
+      "logoUrl": "img/logo-bootstrap.svg"
+    },
+    {
+      "name": "Tailwind CSS",
+      "logoUrl": "img/logo-tailwindcss.svg"
+    },
+    {
+      "name": "styled components",
+      "logoUrl": "img/logo-styled-components.svg"
+    }
   ]
 }

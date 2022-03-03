@@ -7,6 +7,10 @@ export default function () {
       this.get("/api/projects", () => ({
         projects: data.projects,
       }));
+
+      this.get("/api/skills", () => ({
+        skills: data.skills,
+      }));
     },
   });
 }
