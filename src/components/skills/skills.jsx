@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { H2 } from "../../styles/components";
+import { H2, Section } from "../../styles/components";
 import tw from "twin.macro";
 
 const Skills = () => {
@@ -17,19 +17,19 @@ const Skills = () => {
   }, []);
 
   return (
-    <section>
+    <Section>
       <H2>Что умею</H2>
       <SkillsList>
         {skills.map(({ name, logoUrl }) => {
           return (
             <SkillItem key={name}>
-              <TechName>{name}</TechName>
               <LogoImg src={logoUrl} width="50" height="50" alt={name} />
+              <TechName>{name}</TechName>
             </SkillItem>
           );
         })}
       </SkillsList>
-    </section>
+    </Section>
   );
 };
 
@@ -48,9 +48,7 @@ const SkillItem = tw.li`
   sm:flex-row
   flex-col
   items-center
-  justify-center
-  px-3
-  md:pl-6
+  pl-2
   py-2
   bg-[#f2f4f5]
   transition
@@ -80,7 +78,8 @@ const LogoImg = tw.img`
   h-[30px]
   sm:mb-auto
   mb-2
-  sm:ml-auto
+  xl:mr-5
+  mr-2
 `;
 
 export default Skills;

@@ -84,7 +84,8 @@ const Label = tw.label`
 
   mr-5
   md:mr-0
-  mb-2
+  md:mb-2
+  mb-0
 
   before:absolute
   before:left-0
