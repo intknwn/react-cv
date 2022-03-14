@@ -11,6 +11,8 @@ export default function () {
       this.get("/api/skills", () => ({
         skills: data.skills,
       }));
+
+      this.passthrough("https://formspree.io/**");
     },
   });
 }

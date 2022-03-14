@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import Skills from "../skills/skills.jsx";
 import Projects from "../projects/projects.jsx";
+import ContactMe from "../contact-me/contact-me.jsx";
 import { Container } from "../../styles/components";
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
       <Container>
         <Skills />
         <Projects />
+        <ContactMe />
       </Container>
     </StrictMode>
   );
