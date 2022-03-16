@@ -15,7 +15,6 @@ const TypeFilters = ({ activeFilter, onFilterChange }) => {
           return (
             <Fragment key={filterType}>
               <RadioInput
-                className="visually-hidden"
                 type="radio"
                 name="type"
                 id={filterType}
@@ -38,6 +37,18 @@ const InputsWrapper = tw.div`
 `;
 
 const RadioInput = styled.input`
+  ${tw`sr-only`}
+
+  &:focus + label {
+    ${tw`text-black`}
+    &:before {
+      ${tw`scale-125 transition duration-300`}
+    }
+    &:after {
+      ${tw`bg-amber-500`}
+    }
+  }
+
   & + label {
     &:after {
       ${tw`
@@ -48,7 +59,7 @@ const RadioInput = styled.input`
         block
         w-3
         h-3
-        bg-black
+        bg-[#555555]
         rounded-full
         opacity-0
         -translate-y-1/2
@@ -78,6 +89,10 @@ const Label = tw.label`
   text-lg
   sm:text-base
 
+  cursor-pointer
+
+  hocus:text-amber-500
+
   before:absolute
   before:left-0
   before:top-1/2
@@ -85,7 +100,7 @@ const Label = tw.label`
   before:w-5
   before:h-5
   before:border-2
-  before:border-black
+  before:border-[#555555]
   before:rounded-full
   before:-translate-y-1/2
 `;

@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import tw, { styled, css } from "twin.macro";
+import { enableScroll, disableScroll } from "../../helpers.js";
 
 const ProjectModal = ({
-  project,
   project: { title, url, repository, images, features },
   toggleModal,
 }) => {
@@ -19,28 +19,15 @@ const ProjectModal = ({
   });
 
   useEffect(() => {
-    document.body.style.position = "fixed";
-    document.body.style.top = 0;
-    document.body.style.right = 0;
-    document.body.style.bottom = 0;
-    document.body.style.left = 0;
+    const scrollY = `-${window.scrollY}px`;
+    disableScroll(scrollY);
 
-    return () => {
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.right = "";
-      document.body.style.bottom = "";
-      document.body.style.left = "";
-    };
+    return () => enableScroll(scrollY);
   }, []);
 
   return (
     <Overlay>
-      <ContentArea
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
-      >
+      <ContentArea onClick={(e) => e.stopPropagation()}>
         <CloseButton type="button" onClick={toggleModal}>
           <span tw="sr-only">Close menu</span>
           <svg

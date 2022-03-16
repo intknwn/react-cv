@@ -145,6 +145,8 @@ const TextField = styled(Field)`
     border-transparent
     outline-none
     align-bottom
+    transition
+    duration-300
 
     hocus:shadow-lg
     disabled:opacity-50
@@ -212,8 +214,10 @@ const SubmitButton = tw.button`
   text-white
   uppercase
   tracking-widest
+  transition
+  duration-300
   
-  hocus:opacity-80
+  hocus:scale-105
   disabled:opacity-50
 `;
 

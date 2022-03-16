@@ -84,7 +84,9 @@ const SocialLink = styled.a`
   &:hover svg,
   &:focus svg {
     ${tw`
-      fill-[rgba(100, 124, 114, 0.8)]
+      transition
+      duration-300
+      scale-110
     `}
   }
 `;

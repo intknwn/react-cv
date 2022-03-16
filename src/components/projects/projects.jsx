@@ -91,14 +91,6 @@ const Projects = () => {
             {filteredProjects.map((project) => (
               <CSSTransition key={project.id} timeout={500} classNames="item">
                 <ListItem>
-                  <Label
-                    {...{
-                      isCommercial: project.type === FilterType.COMMERCIAL.type,
-                      isPractice: project.type === FilterType.PRACTICE.type,
-                    }}
-                  >
-                    {Labels[project.type.toUpperCase()].caption}
-                  </Label>
                   <ProjectCard project={project} />
                 </ListItem>
               </CSSTransition>
@@ -130,7 +122,7 @@ const ProjectsWrapper = tw.div`
 
 const Filters = tw.div`
   sticky
-  top-0
+  top-8
 `;
 
 const List = tw.ul`
@@ -172,32 +164,5 @@ const ListItem = styled.li`
     transform: scale(0.95);
   }
 `;
-
-const Label = styled.div(({ isPractice, isCommercial }) => [
-  tw`
-    absolute
-    px-3
-    py-1
-    top-3 
-    -right-2 
-    text-sm
-    text-white
-    font-bold
-    z-10
-    rounded
-    shadow-xl
-  `,
-  css`
-    text-shadow: 1px 1px 1px rgb(100, 124, 114);
-  `,
-  isPractice &&
-    tw`
-      bg-gradient-to-r from-amber-500 to-yellow-400
-    `,
-  isCommercial &&
-    tw`
-      bg-gradient-to-r from-purple-500 to-pink-500
-    `,
-]);
 
 export default Projects;

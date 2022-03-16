@@ -29,7 +29,6 @@ const TechFilters = ({ checkedFilters, onFilterChange }) => {
         return (
           <Fragment key={tech}>
             <CheckBoxInput
-              className="visually-hidden"
               type="checkbox"
               name={tech}
               id={tech}
@@ -45,6 +44,15 @@ const TechFilters = ({ checkedFilters, onFilterChange }) => {
 };
 
 const CheckBoxInput = styled.input`
+  ${tw`sr-only`}
+
+  &:focus + label {
+    ${tw`text-amber-500`}
+    &:before {
+      ${tw`rotate-[90deg] transition duration-300`}
+    }
+  }
+
   & + label {
     &:after {
       ${tw`
@@ -59,7 +67,7 @@ const CheckBoxInput = styled.input`
         border-4
         border-t-0
         border-r-0
-        border-black
+        border-amber-500
         opacity-0
         translate-y-[-80%]
         -rotate-45
@@ -87,6 +95,10 @@ const Label = tw.label`
   md:mb-2
   mb-0
 
+  cursor-pointer
+
+  hocus:text-amber-500
+
   before:absolute
   before:left-0
   before:top-1/2
@@ -94,7 +106,7 @@ const Label = tw.label`
   before:w-5
   before:h-5
   before:border-2
-  before:border-black
+  before:border-[#555555]
   before:-translate-y-1/2
 `;
 
