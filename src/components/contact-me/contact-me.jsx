@@ -4,7 +4,7 @@ import { H2, Section } from "../../styles/components.js";
 
 const ContactMe = () => {
   return (
-    <Section>
+    <Section id="contacts">
       <H2>Контакты</H2>
       <ContactsWrapper>
         <TextWrapper>

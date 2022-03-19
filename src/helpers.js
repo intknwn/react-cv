@@ -12,5 +12,7 @@ export const enableScroll = (scrollY) => {
   document.body.style.right = "";
   document.body.style.bottom = "";
   document.body.style.left = "";
+  document.documentElement.style.scrollBehavior = `auto`;
   window.scrollTo(0, parseInt(scrollY || "0") * -1);
+  document.documentElement.style.scrollBehavior = ``;
 };

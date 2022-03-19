@@ -9,6 +9,8 @@ export default createGlobalStyle`
 
   html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding: 80px;
   }
 
   *,

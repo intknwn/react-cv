@@ -65,7 +65,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <Section>
+    <Section id="projects">
       <H2>Что делал</H2>
       <ProjectsWrapper>
         <FiltersWrapper>

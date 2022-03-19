@@ -17,7 +17,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <Section>
+    <Section id="skills">
       <H2>Что умею</H2>
       <SkillsList>
         {skills.map(({ name, logoUrl }) => {

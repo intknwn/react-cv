@@ -2,6 +2,7 @@ import tw, { styled } from "twin.macro";
 import { defaultTheme } from "./theme";
 
 export const Container = tw.div`
+  relative
   container
   mx-auto
   sm:px-10
@@ -21,6 +22,14 @@ export const H2 = tw.h2`
 export const Section = tw.section`
   md:mb-32
   mb-12
+`;
+
+export const HeaderSection = tw.header`
+  relative
+  flex
+  flex-col
+  justify-center
+  h-screen
 `;
 
 export const Title = tw.p`
