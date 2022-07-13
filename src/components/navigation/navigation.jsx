@@ -7,12 +7,12 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
+    <header>
       <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
       <Nav isOpen={isOpen}>
         <Menu />
       </Nav>
-    </>
+    </header>
   );
 };
 
