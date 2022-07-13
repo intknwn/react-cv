@@ -1,29 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import tw, { styled } from "twin.macro";
 import { keyframes } from "styled-components";
-import { HeaderSection } from "../../styles/components";
 
-const Header = () => {
+const Welcome = () => {
+  const [clientHeight] = useState(document.documentElement.clientHeight);
+
   useEffect(() => {
-    const scrollHandler = () => {
-      let isFired = false;
+    const scrollBtn = document.getElementById(`scroll-btn`);
+    const skills = document.getElementById(`skills`);
 
-      return () => {
-        if (isFired) return;
-
-        const animation = document.getElementById(`scroll-animation`);
-        animation.style.opacity = 0;
-        isFired = true;
-      };
-    };
-
-    window.addEventListener(`scroll`, scrollHandler());
-
-    return () => window.removeEventListener(`scroll`, scrollHandler);
+    scrollBtn.addEventListener(`click`, () => skills.scrollIntoView());
   }, []);
 
   return (
-    <HeaderSection>
+    <WelcomeSection>
       <h1 tw="sr-only">Дмитрий Неклюдов — front-end разработчик</h1>
       <Greeting>
         Привет!
@@ -35,34 +25,18 @@ const Header = () => {
       </AboutMe>
       <Goal>Ищу команду, чтобы сделать веб лучше</Goal>
       <ContactButton href="#contacts">Предложить работу</ContactButton>
-      <SvgIcon
-        id="scroll-animation"
-        xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        fillRule="evenodd"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeMiterlimit="1.5"
-        clipRule="evenodd"
-        viewBox="0 0 247 390"
-      >
-        <path
-          id="wheel"
-          fill="none"
-          stroke="#555555"
-          strokeWidth="20"
-          d="M123.359 79.775v72.843"
-        ></path>
-        <path
-          fill="none"
-          stroke="#555555"
-          strokeWidth="20"
-          d="M236.717 123.359C236.717 60.794 185.923 10 123.359 10 60.794 10 10 60.794 10 123.359v143.237c0 62.565 50.794 113.359 113.359 113.359 62.564 0 113.358-50.794 113.358-113.359V123.359z"
-        ></path>
-      </SvgIcon>
-    </HeaderSection>
+      <ScrollDownButton id="scroll-btn"></ScrollDownButton>
+    </WelcomeSection>
   );
 };
+
+const WelcomeSection = tw.section`
+  relative
+  flex
+  flex-col
+  justify-center
+  h-screen
+`;
 
 const Greeting = tw.p`
   sm:mb-12
@@ -135,4 +109,41 @@ const SvgIcon = styled.svg`
   }
 `;
 
-export default Header;
+const ScrollDownButton = styled.button`
+  ${tw`
+    appearance-none
+    absolute
+    left-1/2
+    bottom-24
+    w-16
+    h-16
+    border-4
+    border-[#555555]
+    rounded-full
+    -translate-x-1/2
+    transition
+    hocus:opacity-70
+  `}
+
+  &:before {
+    ${tw`
+      content-['']
+      absolute
+      top-1/2
+      left-1/2
+      block
+      w-5
+      h-5
+      bg-transparent
+      border-[#555555]
+      border-4
+      border-t-0
+      border-r-0
+      -translate-x-1/2
+      -translate-y-2/3
+      -rotate-45
+    `}
+  }
+`;
+
+export default Welcome;
