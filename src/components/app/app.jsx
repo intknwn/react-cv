@@ -1,23 +1,18 @@
-import { StrictMode } from "react";
-import Navigation from "../navigation/navigation.jsx";
-import Header from "../header/header.jsx";
-import Skills from "../skills/skills.jsx";
-import Projects from "../projects/projects.jsx";
-import ContactMe from "../contact-me/contact-me.jsx";
-import Burger from "../burger/burger.jsx";
-import { Container } from "../../styles/components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "../layout/layout.jsx";
+import Main from "../main/main.jsx";
+import AboutMe from "../about-me/about-me.jsx";
 
 const App = () => {
   return (
-    <StrictMode>
-      <Container>
-        <Navigation />
-        <Header />
-        <Skills />
-        <Projects />
-        <ContactMe />
-      </Container>
-    </StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Main />} />
+          <Route path="about" element={<AboutMe />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 
