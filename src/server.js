@@ -12,6 +12,14 @@ export default function () {
         skills: data.skills,
       }));
 
+      this.get("/api/employment", () => ({
+        employment: data.employment,
+      }));
+
+      this.get("/api/education", () => ({
+        education: data.education,
+      }));
+
       this.passthrough("https://formspree.io/**");
     },
   });
