@@ -16,3 +16,11 @@ export const enableScroll = (scrollY) => {
   window.scrollTo(0, parseInt(scrollY || "0") * -1);
   document.documentElement.style.scrollBehavior = ``;
 };
+
+export const formatDate = (
+  date,
+  options = {
+    year: "numeric",
+    month: "long",
+  }
+) => new Date(date).toLocaleDateString("ru-RU", options);
