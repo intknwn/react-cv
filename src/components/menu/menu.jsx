@@ -1,19 +1,27 @@
-import tw, { styled } from "twin.macro";
+import tw, { styled, css } from "twin.macro";
+import { NavLink as NavigationLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Menu = () => {
   return (
     <LinksList>
       <LinkItem>
-        <Link href="#">Обо мне</Link>
+        <NavLink to="/about">Обо мне</NavLink>
       </LinkItem>
       <LinkItem>
-        <Link href="#skills">Навыки</Link>
+        <Link as={HashLink} to="/#skills">
+          Навыки
+        </Link>
       </LinkItem>
       <LinkItem>
-        <Link href="#projects">Проекты</Link>
+        <Link as={HashLink} to="/#projects">
+          Проекты
+        </Link>
       </LinkItem>
       <LinkItem>
-        <Link href="#contacts">Контакты</Link>
+        <Link as={HashLink} to="/#contacts" smooth>
+          Контакты
+        </Link>
       </LinkItem>
     </LinksList>
   );
@@ -23,7 +31,6 @@ const LinksList = tw.ul`
   flex
   md:flex-row
   flex-col
-
 `;
 
 const LinkItem = tw.li`
@@ -32,7 +39,7 @@ const LinkItem = tw.li`
   mb-6
 `;
 
-const Link = styled.a`
+const linkStyles = css`
   ${tw`
     inline-block
     text-3xl
@@ -61,6 +68,34 @@ const Link = styled.a`
       w-full
     `}
   }
+
+  &.active {
+    ${tw`
+      pointer-events-none
+      cursor-default
+    `}
+
+    &:before {
+      ${tw`
+      content-['']
+      absolute
+      -bottom-1
+      h-1
+      w-full
+      bg-amber-400
+      transition-all
+      duration-300
+    `}
+    }
+  }
+`;
+
+const Link = styled(HashLink)`
+  ${linkStyles}
+`;
+
+const NavLink = styled(NavigationLink)`
+  ${linkStyles}
 `;
 
 export default Menu;
