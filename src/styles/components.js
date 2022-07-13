@@ -7,6 +7,8 @@ export const Container = tw.div`
   mx-auto
   sm:px-10
   px-4
+  md:pt-20
+  pt-4
 `;
 
 export const H2 = tw.h2`
@@ -19,17 +21,11 @@ export const H2 = tw.h2`
   tracking-wide
 `;
 
+export const H1 = styled(H2)``;
+
 export const Section = tw.section`
   md:mb-32
   mb-12
-`;
-
-export const HeaderSection = tw.header`
-  relative
-  flex
-  flex-col
-  justify-center
-  h-screen
 `;
 
 export const Title = tw.p`
