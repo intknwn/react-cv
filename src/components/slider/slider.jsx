@@ -26,8 +26,9 @@ const SwiperSlider = styled(Swiper)`
       w-full
       sm:pr-16
       sm:pl-16
-      pr-12
-      pl-12
+      px-12
+      py-4
+      pb-20
     `}
   }
 

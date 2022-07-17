@@ -37,7 +37,7 @@ const Nav = styled.nav(({ isOpen }) => [
     lg:bg-[rgba(242, 244, 245, 0.7)]
     bg-white
     backdrop-blur
-    z-10
+    z-50
     transition
     duration-300
     lg:translate-x-0

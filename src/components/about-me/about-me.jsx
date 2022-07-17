@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import tw, { styled, css } from "twin.macro";
-import { H1, H2 } from "../../styles/components";
+import { H1, H2, Section } from "../../styles/components";
 import Accordion from "../accordion/accordion.jsx";
 import AccordionJobTitle from "../accordion-job-title/accordion-job-title.jsx";
 import AccordionJobContent from "../accordion-job-content/accordion-job-content.jsx";
@@ -117,7 +117,7 @@ const AboutMe = () => {
           <p>Знаю английский язык на уровне upper-intermediate. 🇬🇧</p>
         </About>
       </AboutMeSection>
-      <section>
+      <Section>
         <H2>Где работал</H2>
         <JobsList>
           {employment.map((jobData, index) => (
@@ -130,8 +130,8 @@ const AboutMe = () => {
             </AccordionItem>
           ))}
         </JobsList>
-      </section>
-      <section>
+      </Section>
+      <Section>
         <H2>Где учился</H2>
         <ul>
           {education.map((provider, index) => (
@@ -144,7 +144,7 @@ const AboutMe = () => {
             </AccordionItem>
           ))}
         </ul>
-      </section>
+      </Section>
       <ContactMe />
     </>
   );
@@ -241,7 +241,6 @@ const About = tw.div`
 `;
 
 const JobsList = tw.ul`
-  mb-12
   pl-14
 `;
 

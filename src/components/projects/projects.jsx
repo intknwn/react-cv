@@ -6,7 +6,7 @@ import TechFilters from "../tech-filters/tech-filter.jsx";
 import ProjectCard from "../project-card/project-card.jsx";
 import Slider from "../slider/slider.jsx";
 import { defaultTheme } from "../../styles/theme";
-import { H2, Section } from "../../styles/components";
+import { H2 } from "../../styles/components";
 import { FilterType, FilterTech, Labels } from "../../const";
 
 const Projects = () => {
@@ -65,7 +65,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <Section id="projects">
+    <ProjectsSection id="projects">
       <H2>Что делал</H2>
       <ProjectsWrapper>
         <FiltersWrapper>
@@ -98,9 +98,14 @@ const Projects = () => {
           </TransitionGroup>
         )}
       </ProjectsWrapper>
-    </Section>
+    </ProjectsSection>
   );
 };
+
+const ProjectsSection = tw.section`
+  mb-0
+  md:mb-32
+`;
 
 const FiltersWrapper = tw.div`
   xl:col-span-2

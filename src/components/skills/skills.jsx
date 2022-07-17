@@ -57,6 +57,9 @@ const SkillItem = tw.li`
   hover:shadow-2xl
   hover:scale-110
   rounded-lg
+
+  odd:hover:rotate-[5deg]
+  even:hover:rotate-[-5deg]
 `;
 
 const TechName = tw.span`

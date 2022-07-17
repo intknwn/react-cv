@@ -35,28 +35,32 @@ const WelcomeSection = tw.section`
   flex
   flex-col
   justify-center
-  h-screen
+  h-[calc(100vh - 1rem)]
+  md:h-[calc(100vh - 5rem)]
 `;
 
 const Greeting = tw.p`
-  sm:mb-12
   mb-8
+  md:mb-12
   text-[#333333]
   font-bold
-  sm:text-6xl
+  sm:text-5xl
+  lg:text-6xl
   text-4xl
 `;
 
 const AboutMe = tw.p`
   max-w-[800px]
-  sm:mb-10
+  md:mb-10
   mb-6
-  sm:text-3xl
+  sm:text-2xl
+  lg:text-3xl
   text-xl
 `;
 
 const Goal = tw.p`
-  sm:text-2xl
+  sm:text-xl
+  lg:text-2xl
   text-lg
   font-bold
   mb-8
@@ -69,7 +73,8 @@ const ContactButton = styled.a`
     px-10
     bg-amber-400
     text-[#333333]
-    text-base
+    text-sm
+    sm:text-base
     rounded-lg
     font-bold
     uppercase
@@ -114,15 +119,17 @@ const ScrollDownButton = styled.button`
     appearance-none
     absolute
     left-1/2
-    bottom-24
-    w-16
-    h-16
+    bottom-[5%]
+    w-12
+    h-12
     border-4
     border-[#555555]
+    opacity-70
     rounded-full
     -translate-x-1/2
     transition
-    hocus:opacity-70
+    hocus:opacity-50
+    animate-bounce
   `}
 
   &:before {
@@ -132,8 +139,8 @@ const ScrollDownButton = styled.button`
       top-1/2
       left-1/2
       block
-      w-5
-      h-5
+      w-4
+      h-4
       bg-transparent
       border-[#555555]
       border-4
