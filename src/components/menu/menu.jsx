@@ -1,13 +1,31 @@
 import { NavLink as NavigationLink, useLocation } from "react-router-dom";
 import tw, { css, styled } from "twin.macro";
+import { useEffect, useRef } from "react";
 
 import { HashLink } from "react-router-hash-link";
 
-const Menu = () => {
+const Menu = ({ setIsOpen }) => {
   const { pathname } = useLocation();
+  const ref = useRef();
+
+  useEffect(() => {
+    const clickHandler = (e) => {
+      if (
+        ref.current &&
+        ref.current.contains(e.target) &&
+        e.target.tagName === "A"
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("click", clickHandler);
+
+    return () => window.removeEventListener("click", clickHandler);
+  }, []);
 
   return (
-    <LinksList>
+    <LinksList ref={ref}>
       {pathname !== "/" && (
         <HomeLinkItem>
           <HomeLink to="/">Главная</HomeLink>
@@ -19,7 +37,7 @@ const Menu = () => {
         </Link>
       </LinkItem>
       <LinkItem>
-        <Link as={HashLink} to="/#projects">
+        <Link as={HashLink} to="/#projects" onClick={() => setIsOpen(false)}>
           Проекты
         </Link>
       </LinkItem>

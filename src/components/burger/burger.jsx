@@ -27,7 +27,7 @@ const BurgerButton = styled.button`
     p-4
     pb-8
     pl-8
-    z-20
+    z-40
     rounded-bl-full
 
     bg-amber-400

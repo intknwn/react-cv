@@ -1,19 +1,36 @@
 import tw, { styled } from "twin.macro";
+import { useEffect, useRef, useState } from "react";
 
 import Burger from "../burger/burger.jsx";
 import Menu from "../menu/menu.jsx";
-import { useState } from "react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef();
+
+  useEffect(() => {
+    const clickHandler = (e) => {
+      if (isOpen && ref.current && !ref.current.contains(e.target)) {
+        setIsOpen(!isOpen);
+      }
+    };
+
+    document.addEventListener("click", clickHandler);
+
+    return () => {
+      document.removeEventListener("click", clickHandler);
+    };
+  }, [isOpen]);
 
   return (
-    <header>
+    <>
       <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
-      <Nav isOpen={isOpen}>
-        <Menu />
-      </Nav>
-    </header>
+      <div ref={ref}>
+        <Nav isOpen={isOpen}>
+          <Menu setIsOpen={setIsOpen} />
+        </Nav>
+      </div>
+    </>
   );
 };
 
@@ -38,7 +55,7 @@ const Nav = styled.nav(({ isOpen }) => [
     lg:bg-[rgba(242, 244, 245, 0.7)]
     bg-white
     backdrop-blur
-    z-50
+    z-30
     transition
     duration-300
     lg:translate-x-0
