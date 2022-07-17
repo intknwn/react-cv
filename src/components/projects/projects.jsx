@@ -8,6 +8,7 @@ import ProjectCard from "../project-card/project-card.jsx";
 import Slider from "../slider/slider.jsx";
 import TechFilters from "../tech-filters/tech-filter.jsx";
 import TypeFilters from "../type-filters/type-filters.jsx";
+import { getData } from "../../helpers";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -16,13 +17,6 @@ const Projects = () => {
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [mediaQueryList] = useState(window.matchMedia("(max-width: 640px)"));
   const [isMobile, setMobile] = useState(mediaQueryList.mathes);
-
-  async function getProjects() {
-    const res = await fetch("/api/projects");
-    const json = await res.json();
-
-    setProjects(json.projects);
-  }
 
   const filterProjects = () => {
     const isAll = typeFilter === FilterType.ALL.type;
@@ -39,15 +33,8 @@ const Projects = () => {
     setFilteredProjects(filtered);
   };
 
-  const getProjectsByCond = () => {
-    return typeFilter === FilterType.ALL.type &&
-      techFilters.length === Object.keys(FilterTech).length
-      ? projects
-      : filteredProjects;
-  };
-
   useEffect(() => {
-    getProjects();
+    getData("/api/projects", (json) => setProjects(json.projects));
   }, []);
 
   useEffect(() => {
