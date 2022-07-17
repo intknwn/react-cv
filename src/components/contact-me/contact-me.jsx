@@ -1,6 +1,7 @@
-import tw, { styled } from "twin.macro";
-import ContactForm from "../contact-form/contact-form.jsx";
 import { H2, Section } from "../../styles/components.js";
+import tw, { styled } from "twin.macro";
+
+import ContactForm from "../contact-form/contact-form.jsx";
 
 const ContactMe = () => {
   return (

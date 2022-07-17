@@ -1,5 +1,6 @@
-import tw, { styled, css } from "twin.macro";
 import { NavLink as NavigationLink, useLocation } from "react-router-dom";
+import tw, { css, styled } from "twin.macro";
+
 import { HashLink } from "react-router-hash-link";
 
 const Menu = () => {

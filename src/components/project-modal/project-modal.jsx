@@ -1,6 +1,7 @@
+import { disableScroll, enableScroll } from "../../helpers.js";
+import tw, { css, styled } from "twin.macro";
+
 import { useEffect } from "react";
-import tw, { styled, css } from "twin.macro";
-import { enableScroll, disableScroll } from "../../helpers.js";
 
 const ProjectModal = ({
   project: { title, url, repository, images, features },

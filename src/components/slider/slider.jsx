@@ -1,9 +1,10 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
-import tw, { styled } from "twin.macro";
-
 import "swiper/css";
 import "swiper/css/navigation";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import tw, { styled } from "twin.macro";
+
+import { Navigation } from "swiper";
 
 const Slider = ({ children }) => {
   return (

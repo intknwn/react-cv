@@ -1,8 +1,9 @@
-import { useState } from "react";
-import tw, { styled, css } from "twin.macro";
+import { FilterType, Labels } from "../../const";
+import tw, { css, styled } from "twin.macro";
+
 import Modal from "../modal/modal.jsx";
 import ProjectModal from "../project-modal/project-modal.jsx";
-import { FilterType, Labels } from "../../const";
+import { useState } from "react";
 
 const ProjectCard = ({ project, project: { images, title, desc, tags } }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);

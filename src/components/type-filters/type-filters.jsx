@@ -1,8 +1,8 @@
-import { Fragment } from "react";
 import tw, { styled } from "twin.macro";
-import { Title } from "../../styles/components";
-import { defaultTheme } from "../../styles/theme";
+
 import { FilterType } from "../../const";
+import { Fragment } from "react";
+import { Title } from "../../styles/components";
 
 const TypeFilters = ({ activeFilter, onFilterChange }) => {
   return (

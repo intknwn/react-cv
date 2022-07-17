@@ -1,6 +1,6 @@
-import { useState } from "react";
 import Modal from "../modal/modal.jsx";
 import ProjectModal from "../project-modal/project-modal.jsx";
+import { useState } from "react";
 
 const ProjectLink = ({ project }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);

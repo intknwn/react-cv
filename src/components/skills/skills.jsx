@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
 import { H2, Section } from "../../styles/components";
+import { useEffect, useState } from "react";
+
 import tw from "twin.macro";
 
 const Skills = () => {

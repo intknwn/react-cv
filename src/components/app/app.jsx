@@ -1,8 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ScrollToTop from "../scroll-to-top/scroll-to-top.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import AboutMe from "../about-me/about-me.jsx";
 import Layout from "../layout/layout.jsx";
 import Main from "../main/main.jsx";
-import AboutMe from "../about-me/about-me.jsx";
+import ScrollToTop from "../scroll-to-top/scroll-to-top.jsx";
 
 const App = () => {
   return (

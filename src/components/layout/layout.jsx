@@ -1,6 +1,6 @@
+import { Container } from "../../styles/components";
 import Navigation from "../navigation/navigation.jsx";
 import { Outlet } from "react-router-dom";
-import { Container } from "../../styles/components";
 
 const Layout = () => {
   return (

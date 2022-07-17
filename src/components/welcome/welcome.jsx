@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
 import tw, { styled } from "twin.macro";
-import { keyframes } from "styled-components";
+import { useEffect, useState } from "react";
+
 import { ScrollDownButton } from "../../styles/components.js";
+import { keyframes } from "styled-components";
 
 const Welcome = () => {
   const [clientHeight] = useState(document.documentElement.clientHeight);

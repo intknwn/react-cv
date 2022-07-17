@@ -1,7 +1,8 @@
-import { useState } from "react";
 import tw, { styled } from "twin.macro";
+
 import Burger from "../burger/burger.jsx";
 import Menu from "../menu/menu.jsx";
+import { useState } from "react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);

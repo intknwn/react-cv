@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import tw, { styled, css } from "twin.macro";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import TypeFilters from "../type-filters/type-filters.jsx";
-import TechFilters from "../tech-filters/tech-filter.jsx";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { FilterTech, FilterType, Labels } from "../../const";
+import React, { useEffect, useState } from "react";
+import tw, { styled } from "twin.macro";
+
+import { H2 } from "../../styles/components";
 import ProjectCard from "../project-card/project-card.jsx";
 import Slider from "../slider/slider.jsx";
-import { defaultTheme } from "../../styles/theme";
-import { H2 } from "../../styles/components";
-import { FilterType, FilterTech, Labels } from "../../const";
+import TechFilters from "../tech-filters/tech-filter.jsx";
+import TypeFilters from "../type-filters/type-filters.jsx";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);

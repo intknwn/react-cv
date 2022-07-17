@@ -1,8 +1,8 @@
 import tw, { styled } from "twin.macro";
+
+import { FilterTech } from "../../const";
 import { Fragment } from "react";
 import { Title } from "../../styles/components";
-import { defaultTheme } from "../../styles/theme";
-import { FilterTech } from "../../const";
 
 const TechFilters = ({ checkedFilters, onFilterChange }) => {
   const changeHandler = (filter, isChecked) => {

@@ -1,7 +1,7 @@
-import { useState } from "react";
 import tw, { styled } from "twin.macro";
-import { formatDate } from "../../helpers";
+
 import ProjectLink from "../project-link/project-link.jsx";
+import { formatDate } from "../../helpers";
 
 const AccordionEduContent = ({
   data: {
