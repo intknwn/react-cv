@@ -1,56 +1,35 @@
-import { useState, useEffect } from "react";
-import tw, { styled, css } from "twin.macro";
-import { H1, H2, Section } from "../../styles/components";
+import { H1, H2, ScrollDownButton, Section } from "../../styles/components";
+import { getData, getDate } from "../../helpers.js";
+import tw, { css, styled } from "twin.macro";
+import { useEffect, useState } from "react";
+
 import Accordion from "../accordion/accordion.jsx";
-import AccordionJobTitle from "../accordion-job-title/accordion-job-title.jsx";
-import AccordionJobContent from "../accordion-job-content/accordion-job-content.jsx";
-import AccordionEduTitle from "../accordion-edu-title/accordion-edu-title.jsx";
 import AccordionEduContent from "../accordion-edu-content/accordion-edu-content.jsx";
+import AccordionEduTitle from "../accordion-edu-title/accordion-edu-title.jsx";
+import AccordionJobContent from "../accordion-job-content/accordion-job-content.jsx";
+import AccordionJobTitle from "../accordion-job-title/accordion-job-title.jsx";
 import ContactMe from "../contact-me/contact-me.jsx";
 
-const getDate = (date) =>
-  `"` +
-  new Date(date.start).toLocaleDateString("ru-RU", {
-    year: "numeric",
-  }) +
-  `"`;
-
 const AboutMe = () => {
+  const [contacts, setContacts] = useState([]);
   const [employment, setEmployment] = useState([]);
   const [education, setEducation] = useState([]);
   const [projects, setProjects] = useState([]);
 
-  async function getProjects() {
-    const data = await fetch("/api/projects");
-    const json = await data.json();
-
-    setProjects(json.projects);
-  }
-
-  async function getEmployment() {
-    const data = await fetch("/api/employment");
-    const json = await data.json();
-
-    setEmployment(json.employment);
-  }
-
-  async function getEducation() {
-    const data = await fetch("/api/education");
-    const json = await data.json();
-
-    setEducation(json.education);
-  }
-
   useEffect(() => {
-    getProjects();
+    getData("/api/contacts", (json) => setContacts(json.contacts));
   }, []);
 
   useEffect(() => {
-    getEmployment();
+    getData("/api/projects", (json) => setProjects(json.projects));
   }, []);
 
   useEffect(() => {
-    getEducation();
+    getData("/api/employment", (json) => setEmployment(json.employment));
+  }, []);
+
+  useEffect(() => {
+    getData("/api/education", (json) => setEducation(json.education));
   }, []);
 
   return (
@@ -82,12 +61,7 @@ const AboutMe = () => {
           </picture>
           <Location>Санкт-Петербург, Россия</Location>
           <SocialList>
-            {[
-              { name: `telegram`, url: `https://telegram.me/nemitya` },
-              { name: `whatsapp`, url: `https://wa.me/79811082256` },
-              { name: `mail`, url: `mailto:intknwn@gmail.com` },
-              { name: `github`, url: `https://github.com/intknwn` },
-            ].map(({ name, url }) => (
+            {contacts.map(({ name, url }) => (
               <ListItem key={name}>
                 <SocialLink href={url} aria-labelledby={name}>
                   <span tw="sr-only" aria-labelledby={name}>
@@ -102,22 +76,23 @@ const AboutMe = () => {
           </SocialList>
         </PhotoWrapper>
         <About>
-          <p tw="text-xl leading-snug mb-3">
+          <Statement>
             Я ❤️ чистый код, удобные интерфейсы, и нетривиальные задачи 👨‍💻
-          </p>
-          <p tw="text-xl mb-3">
-            Хочу развиваться во фронтенде 📈: изучить TypeScript, прокачать
-            навыки написания unit-тестов.
-          </p>
-          <p tw="text-xl mb-3">
-            Ответственно отношусь к работе, и мне важен качественный результат.
+          </Statement>
+          <Statement>Хочу развиваться во фронтенд разработке 📈</Statement>
+          <Statement>
+            Ответственно отношусь к работе, и мне важен качественный результат
             🔥
-          </p>
-          <p tw="text-xl mb-3">Люблю вызовы и не боюсь сложных задач. 💪</p>
-          <p>Знаю английский язык на уровне upper-intermediate. 🇬🇧</p>
+          </Statement>
+          <Statement>Люблю вызовы и не боюсь сложных задач 💪</Statement>
+          <Statement>
+            Знаю английский язык на уровне upper-intermediate 🇬🇧
+          </Statement>
+          <Statement>Занимаюсь серфингом 🏄 и йогой 🧘</Statement>
         </About>
+        <ScrollDownButton id="scroll-btn" tw="hidden md:block" />
       </AboutMeSection>
-      <Section>
+      <Section id="employment">
         <H2>Где работал</H2>
         <JobsList>
           {employment.map((jobData, index) => (
@@ -238,6 +213,11 @@ const About = tw.div`
   md:pt-12
   text-xl
   mx-auto
+`;
+
+const Statement = tw.p`
+  text-xl
+  mb-3
 `;
 
 const JobsList = tw.ul`

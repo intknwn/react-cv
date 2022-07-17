@@ -696,5 +696,11 @@
         }
       ]
     }
+  ],
+  "contacts": [
+    { "name": "telegram", "url": "https://telegram.me/nemitya" },
+    { "name": "whatsapp", "url": "https://wa.me/79811082256" },
+    { "name": "mail", "url": "mailto:intknwn@gmail.com" },
+    { "name": "github", "url": "https://github.com/intknwn" }
   ]
 }

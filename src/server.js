@@ -8,6 +8,10 @@ export default function () {
         projects: data.projects,
       }));
 
+      this.get("/api/contacts", () => ({
+        contacts: data.contacts,
+      }));
+
       this.get("/api/skills", () => ({
         skills: data.skills,
       }));

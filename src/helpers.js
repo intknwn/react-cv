@@ -24,3 +24,17 @@ export const formatDate = (
     month: "long",
   }
 ) => new Date(date).toLocaleDateString("ru-RU", options);
+
+export async function getData(url, cb) {
+  const data = await fetch(url);
+  const json = await data.json();
+
+  return cb(json);
+}
+
+export const getDate = (date) =>
+  `"` +
+  new Date(date.start).toLocaleDateString("ru-RU", {
+    year: "numeric",
+  }) +
+  `"`;

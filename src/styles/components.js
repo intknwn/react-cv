@@ -35,3 +35,42 @@ export const Title = tw.p`
   text-lg
   text-[#647c72]
 `;
+
+export const ScrollDownButton = styled.button`
+  ${tw`
+    appearance-none
+    absolute
+    left-1/2
+    bottom-[5%]
+    w-12
+    h-12
+    border-4
+    border-[#555555]
+    opacity-70
+    rounded-full
+    -translate-x-1/2
+    transition
+    hocus:opacity-50
+    animate-bounce
+  `}
+
+  &:before {
+    ${tw`
+      content-['']
+      absolute
+      top-1/2
+      left-1/2
+      block
+      w-4
+      h-4
+      bg-transparent
+      border-[#555555]
+      border-4
+      border-t-0
+      border-r-0
+      -translate-x-1/2
+      -translate-y-2/3
+      -rotate-45
+    `}
+  }
+`;
