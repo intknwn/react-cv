@@ -6,6 +6,7 @@ import AccordionJobTitle from "../accordion-job-title/accordion-job-title.jsx";
 import AccordionJobContent from "../accordion-job-content/accordion-job-content.jsx";
 import AccordionEduTitle from "../accordion-edu-title/accordion-edu-title.jsx";
 import AccordionEduContent from "../accordion-edu-content/accordion-edu-content.jsx";
+import ContactMe from "../contact-me/contact-me.jsx";
 
 const getDate = (date) =>
   `"` +
@@ -144,6 +145,7 @@ const AboutMe = () => {
           ))}
         </ul>
       </section>
+      <ContactMe />
     </>
   );
 };

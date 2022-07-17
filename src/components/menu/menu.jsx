@@ -1,13 +1,17 @@
 import tw, { styled, css } from "twin.macro";
-import { NavLink as NavigationLink } from "react-router-dom";
+import { NavLink as NavigationLink, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const Menu = () => {
+  const { pathname } = useLocation();
+
   return (
     <LinksList>
-      <LinkItem>
-        <NavLink to="/about">Обо мне</NavLink>
-      </LinkItem>
+      {pathname !== "/" && (
+        <HomeLinkItem>
+          <HomeLink to="/">Главная</HomeLink>
+        </HomeLinkItem>
+      )}
       <LinkItem>
         <Link as={HashLink} to="/#skills">
           Навыки
@@ -19,7 +23,10 @@ const Menu = () => {
         </Link>
       </LinkItem>
       <LinkItem>
-        <Link as={HashLink} to="/#contacts" smooth>
+        <NavLink to="/about">Обо мне</NavLink>
+      </LinkItem>
+      <LinkItem>
+        <Link as={HashLink} to="#contacts">
           Контакты
         </Link>
       </LinkItem>
@@ -29,21 +36,27 @@ const Menu = () => {
 
 const LinksList = tw.ul`
   flex
-  md:flex-row
+  w-full
+  lg:flex-row
+  lg:justify-end
   flex-col
 `;
 
 const LinkItem = tw.li`
-  md:mr-12
-  md:mb-0
+  lg:mr-12
+  lg:mb-0
   mb-6
+`;
+
+const HomeLinkItem = styled(LinkItem)`
+  ${tw`mr-auto`}
 `;
 
 const linkStyles = css`
   ${tw`
     inline-block
     text-3xl
-    md:text-[#555555]
+    lg:text-[#555555]
     text-[#333333]
     relative
     outline-none
@@ -96,6 +109,31 @@ const Link = styled(HashLink)`
 
 const NavLink = styled(NavigationLink)`
   ${linkStyles}
+`;
+
+const HomeLink = styled(NavigationLink)`
+  ${linkStyles}
+
+  ${tw`self-start`}
+
+  &:after {
+    ${tw`
+      content-['']
+      hidden
+      lg:block
+      absolute
+      top-1/2
+      w-3
+      h-3
+      -left-5
+      border-[3px]
+      border-[#555555]
+      border-t-0
+      border-r-0
+      -translate-y-1/3
+      rotate-45
+    `}
+  }
 `;
 
 export default Menu;

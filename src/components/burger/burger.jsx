@@ -12,7 +12,7 @@ const Burger = ({ isOpen, setIsOpen }) => {
 
 const BurgerButton = styled.button`
   ${tw`
-    md:hidden
+    lg:hidden
     fixed
     top-0
     right-0

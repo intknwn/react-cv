@@ -20,30 +20,29 @@ const Nav = styled.nav(({ isOpen }) => [
   tw`
     fixed
     top-0
-    md:left-0
+    lg:left-0
     right-0
     flex
-    md:justify-end
-    md:w-full
+    lg:w-full
     sm:w-72
     w-60
-    md:h-auto
+    lg:h-auto
     h-screen
 
-    md:pt-4
+    lg:pt-4
     pt-16
     sm:pl-12
     pl-8
-    md:pb-6
-    md:bg-[rgba(242, 244, 245, 0.7)]
+    lg:pb-6
+    lg:bg-[rgba(242, 244, 245, 0.7)]
     bg-white
     backdrop-blur
     z-10
     transition
     duration-300
-    md:translate-x-0
+    lg:translate-x-0
     translate-x-full
-    md:shadow-none
+    lg:shadow-none
   `,
   isOpen && tw`translate-x-0 shadow-xl`,
 ]);
