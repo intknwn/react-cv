@@ -1,6 +1,131 @@
 {
   "projects": [
     {
+      "id": 11,
+      "type": "practice",
+      "tags": ["js", "html", "css", "react"],
+      "title": "Сайт-визитка",
+      "desc": "Сайт-визитка, на котором Вы находитесь",
+      "description": "Сайт-визитка для демонстрации моих проектов и полученных навыков",
+      "features": [
+        "SPA на React с использованием Hooks",
+        "Моковый API на Mirage JS",
+        "Стилизация компонентов с использованием Styled Components, Tailwind, и Twin",
+        "Карусель проектов в мобильной версии на Swiper",
+        "Форма обратной связи и валидация с использованием Formik и Yup",
+        "Навигация по сайту реализована на React Router",
+        "Модальные окна реализованы через React Portals"
+      ],
+      "url": "",
+      "repository": "https://github.com/intknwn/react-cv",
+      "images": [
+        {
+          "img": {
+            "src": "img/portfolio-01@1x.png",
+            "srcset": "img/portfolio-01@2x.png 2x"
+          },
+          "sources": [
+            {
+              "type": "image/webp",
+              "srcset": "img/portfolio-01@1x.webp 1x, img/portfolio-01@2x.webp 2x"
+            }
+          ],
+          "alt": "Мой сайт-визитка"
+        },
+        {
+          "img": {
+            "src": "img/portfolio-02@1x.png",
+            "srcset": "img/portfolio-02@2x.png 2x"
+          },
+          "sources": [
+            {
+              "type": "image/webp",
+              "srcset": "img/portfolio-02@1x.webp 1x, img/portfolio-02@2x.webp 2x"
+            }
+          ],
+          "alt": "Мой сайт-визитка"
+        }
+      ]
+    },
+    {
+      "id": 0,
+      "type": "commercial",
+      "tags": ["js", "html", "css", "vue", "wordpress"],
+      "title": "Пилигрим",
+      "desc": "Сайт дизайн-студии «Пилигрим»",
+      "description": "Сайт для команды дизайнеров, иллюстраторов, редакторов, продюсеров с Востока и Запада России",
+      "features": [
+        "Адаптивная верстка под WordPress",
+        "Скейлинг между брейкпоинтами десктопной версии",
+        "Получение данных о проектах с WordPress REST API и отрисовка на Vue.js",
+        "Адаптивные кастомные меню, карусели, и слайдеры",
+        "Валидация формы обратной связи",
+        "Верстка переиспользуемых контент блоков разного типа для конструктора контента"
+      ],
+      "url": "https://piligrims.ru/",
+      "repository": "",
+      "images": [
+        {
+          "img": {
+            "src": "img/piligrims-01@1x.png",
+            "srcset": "img/piligrims-01@2x.png 2x"
+          },
+          "sources": [
+            {
+              "type": "image/webp",
+              "srcset": "img/piligrims-01@1x.webp 1x, img/piligrims-01@2x.webp 2x"
+            }
+          ],
+          "alt": "Сайт дизайн-студии «Пилигрим»"
+        },
+        {
+          "img": {
+            "src": "img/piligrims-02@1x.png",
+            "srcset": "img/piligrims-02@2x.png 2x"
+          },
+          "sources": [
+            {
+              "type": "image/webp",
+              "srcset": "img/piligrims-02@1x.webp 1x, img/piligrims-02@2x.webp 2x"
+            }
+          ],
+          "alt": "Сайт дизайн-студии «Пилигрим»"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "commercial",
+      "tags": ["js", "html", "css"],
+      "title": "Стажировка",
+      "desc": "Стажировка во фронтенд аутсорсе «Лига А.»",
+      "description": "Проект под NDA на стажировке в аутсорсинговом агентстве «Лига А.»",
+      "features": [
+        "Сделал резиновую верстку десктопной и мобильных версий сайта",
+        "Интегрировал микроанимации в верстку (Animate.css, Lottie)",
+        "На нативном JS написал логику слайдшоу о компании (переключение триггерит каскад асинхронных операций с DOM узлами и анимацией)",
+        "Реализовал интерактивную SVG-карту с кликабельными элементами и анимацией",
+        "Реализовал “ленивую” загрузку ресурсов с помощью Intersection Observer API"
+      ],
+      "url": "",
+      "repository": "",
+      "images": [
+        {
+          "img": {
+            "src": "img/liga-a@1x.png",
+            "srcset": "img/liga-a@2x.png 2x"
+          },
+          "sources": [
+            {
+              "type": "image/webp",
+              "srcset": "img/liga-a@1x.webp 1x, img/liga-a@2x.webp 2x"
+            }
+          ],
+          "alt": "Аутсорсинговое агентство «Лига А.»"
+        }
+      ]
+    },
+    {
       "id": 1,
       "type": "practice",
       "tags": ["js", "react"],
@@ -325,7 +450,7 @@
     },
     {
       "id": 8,
-      "type": "commercial",
+      "type": "practice",
       "tags": ["html", "css"],
       "title": "Техномарт",
       "desc": "Верстка страниц интернет-магазина строительных материалов",
