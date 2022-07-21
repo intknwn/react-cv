@@ -7,7 +7,7 @@ import ScrollToTop from "../scroll-to-top/scroll-to-top.jsx";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/cv">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
