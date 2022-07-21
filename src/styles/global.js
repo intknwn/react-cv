@@ -11,6 +11,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
     scroll-behavior: smooth;
     scroll-padding: 80px;
+    height: 100%;
   }
 
   *,
@@ -20,6 +21,7 @@ export default createGlobalStyle`
   }
 
   body {
+    height: 100%;
     font-family: "Open Sans", "Verdana", sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -29,6 +31,10 @@ export default createGlobalStyle`
     background-color: ${defaultTheme.color.bg};
     overflow-x: hidden;
     font-size: 16px;
+  }
+
+  html, body, main, #root {
+    height: 100%;
   }
 
   .visually-hidden {

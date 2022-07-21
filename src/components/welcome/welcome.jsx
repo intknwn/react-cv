@@ -32,13 +32,16 @@ const Welcome = () => {
   );
 };
 
-const WelcomeSection = tw.section`
-  relative
-  flex
-  flex-col
-  justify-center
-  h-[calc(100vh - 1rem)]
-  md:h-[calc(100vh - 5rem)]
+const WelcomeSection = styled.section`
+  ${tw`
+    relative
+    flex
+    flex-col
+    justify-center
+    min-h-screen
+  `}
+
+  min-height: fill-available;
 `;
 
 const Greeting = tw.p`

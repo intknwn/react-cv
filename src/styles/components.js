@@ -4,6 +4,7 @@ import { defaultTheme } from "./theme";
 export const Container = tw.div`
   relative
   container
+  h-full
   mx-auto
   sm:px-10
   px-4
@@ -40,7 +41,7 @@ export const ScrollDownButton = styled.button`
   ${tw`
     appearance-none
     absolute
-    left-1/2
+    left-[calc(50% - 1.5rem)]
     bottom-[5%]
     w-12
     h-12
@@ -48,7 +49,6 @@ export const ScrollDownButton = styled.button`
     border-[#555555]
     opacity-70
     rounded-full
-    -translate-x-1/2
     transition
     hocus:opacity-50
     animate-bounce
