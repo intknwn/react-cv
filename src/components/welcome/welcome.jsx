@@ -38,7 +38,7 @@ const WelcomeSection = styled.section`
     flex
     flex-col
     justify-center
-    min-h-screen
+    h-full
   `}
 
   min-height: fill-available;
