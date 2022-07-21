@@ -23,9 +23,12 @@ const Welcome = () => {
       </Greeting>
       <AboutMe>
         Front-end разработчик с&nbsp;небольшим коммерческим опытом
-        и&nbsp;здоровыми амбициями
+        и&nbsp;большим желанием развиваться
       </AboutMe>
-      <Goal>Ищу команду, чтобы сделать веб лучше</Goal>
+      <Goal>
+        Хочу попасть в&nbsp;команду увлеченных профессионалов,
+        <br /> чтобы вырасти самому и&nbsp;принести много пользы
+      </Goal>
       <ContactButton href="#contacts">Предложить работу</ContactButton>
       <ScrollDownButton id="scroll-btn" />
     </WelcomeSection>
