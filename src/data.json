@@ -142,7 +142,7 @@
         "Интерактивная карта",
         "Возможность добавлять комментарии к объектам недвижимости"
       ],
-      "url": "cv/projects/six-cities/",
+      "url": "/projects/six-cities/",
       "repository": "https://github.com/intknwn/991089-six-cities-4",
       "images": [
         {
@@ -190,7 +190,7 @@
         "Возможность просмотра фильмов онлайн",
         "Добавление обзоров к фильмам"
       ],
-      "url": "cv/projects/what-to-watch/",
+      "url": "/projects/what-to-watch/",
       "repository": "https://github.com/intknwn/991089-what-to-watch-4",
       "images": [
         {
@@ -236,7 +236,7 @@
         "Сортировка",
         "Добавление в избранное"
       ],
-      "url": "cv/projects/bigtrip/",
+      "url": "/projects/bigtrip/",
       "repository": "https://github.com/intknwn/991089-big-trip-11",
       "images": [
         {
@@ -282,7 +282,7 @@
         "Валидация форм",
         "Поддержка IE11"
       ],
-      "url": "cv/projects/israel/",
+      "url": "/projects/israel/",
       "repository": "https://github.com/intknwn/accelerator-israel",
       "images": [
         {
@@ -326,7 +326,7 @@
         "Валидация форм",
         "Адаптивная и ретиновая графика"
       ],
-      "url": "cv/projects/bikes/",
+      "url": "/projects/bikes/",
       "repository": "https://github.com/intknwn/accelerator-bikes",
       "images": [
         {
@@ -371,7 +371,7 @@
         "Добавление комментариев",
         "Валидация форм"
       ],
-      "url": "cv/projects/kekstagram/",
+      "url": "/projects/kekstagram/",
       "repository": "https://github.com/intknwn/991089-kekstagram-19",
       "images": [
         {
@@ -417,7 +417,7 @@
         "Адаптивная и ретиновая графика",
         "Поддержка IE11"
       ],
-      "url": "cv/projects/mishka/",
+      "url": "/projects/mishka/",
       "repository": "https://github.com/intknwn/991089-mishka-18",
       "images": [
         {
@@ -461,7 +461,7 @@
         "Кастомные поля ввода",
         "Поддержка IE11"
       ],
-      "url": "cv/projects/technomart",
+      "url": "/projects/technomart",
       "repository": "https://github.com/intknwn/991089-technomart-26",
       "images": [
         {
