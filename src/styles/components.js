@@ -1,5 +1,4 @@
 import tw, { styled } from "twin.macro";
-import { defaultTheme } from "./theme";
 
 export const Container = tw.div`
   relative
@@ -9,7 +8,7 @@ export const Container = tw.div`
   sm:px-10
   px-4
   md:pt-20
-  pt-4
+  py-4
 `;
 
 export const H2 = tw.h2`

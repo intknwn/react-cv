@@ -5,7 +5,7 @@ import ContactForm from "../contact-form/contact-form.jsx";
 
 const ContactMe = () => {
   return (
-    <Section id="contacts">
+    <ContactsSection id="contacts">
       <H2>Контакты</H2>
       <ContactsWrapper>
         <TextWrapper>
@@ -42,9 +42,15 @@ const ContactMe = () => {
         </TextWrapper>
         <ContactForm />
       </ContactsWrapper>
-    </Section>
+    </ContactsSection>
   );
 };
+
+const ContactsSection = styled(Section)`
+  ${tw`
+    pb-12
+  `}
+`;
 
 const TextWrapper = tw.div`
   sm:col-span-6
