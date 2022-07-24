@@ -1,4 +1,4 @@
-import { H1, H2, ScrollDownButton, Section } from "../../styles/components";
+import { H1, H2, Section } from "../../styles/components";
 import { getData, getDate } from "../../helpers.js";
 import tw, { css, styled } from "twin.macro";
 import { useEffect, useState } from "react";
@@ -90,7 +90,6 @@ const AboutMe = () => {
           </Statement>
           <Statement>Занимаюсь серфингом 🏄 и йогой 🧘</Statement>
         </About>
-        <ScrollDownButton id="scroll-btn" tw="hidden md:block" />
       </AboutMeSection>
       <Section id="employment">
         <H2>Где работал</H2>
