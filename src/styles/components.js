@@ -8,7 +8,7 @@ export const Container = tw.div`
   sm:px-10
   px-4
   md:pt-20
-  py-4
+  pt-4
 `;
 
 export const H2 = tw.h2`
